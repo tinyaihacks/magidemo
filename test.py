@@ -18,6 +18,7 @@ MAGICODER_PROMPT = """You are an exceptionally intelligent coding assistant that
 """
 
 ## Download the GGUF model
+# caange it to 'magicoder-s-ds-6.7b.f16.gguf'
 model_path = join('models', 'milkowski', 'Magicoder-S-DS-6.7B-GGUF', 'magicoder-s-ds-6.7b.f16.gguf')
 
 ## Instantiate model from downloaded file
