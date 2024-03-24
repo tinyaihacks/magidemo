@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 wxenv/
+cuda/
+myenv/
+cuda2/
 models/
 # Distribution / packaging
 .Python
