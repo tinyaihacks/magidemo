@@ -2,10 +2,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+*.gguf
 # C extensions
 *.so
-
+wxenv/
+models/
 # Distribution / packaging
 .Python
 build/
