@@ -34,7 +34,7 @@ generation_kwargs = {
     "top_k": 1,  # This is essentially greedy decoding, since the model will always return the highest-probability token. Set this value > 1 for sampling decoding
     "stream": True  # Enable streaming
 }
-
+ 
 conversation_history = ""
 
 while True:
