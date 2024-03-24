@@ -1,0 +1,607 @@
+
+(myenv) C:\Users\alex_\tinyaihacks\magicoder>set FORCE_CMAKE=1
+
+(myenv) C:\Users\alex_\tinyaihacks\magicoder>set CMAKE_ARGS="-DLLAMA_AVX2=OFF -DLLAMA_CUBLAS=ON"
+
+(myenv) C:\Users\alex_\tinyaihacks\magicoder>pip install --upgrade --force-reinstall --no-cache-dir llama-cpp-python --verbose
+Using pip 23.2.1 from C:\Users\alex_\tinyaihacks\magicoder\cuda\Lib\site-packages\pip (python 3.12)
+Collecting llama-cpp-python
+  Downloading llama_cpp_python-0.2.57.tar.gz (36.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.9/36.9 MB 72.5 MB/s eta 0:00:00
+  Running command pip subprocess to install build dependencies
+  Collecting scikit-build-core[pyproject]>=0.5.1
+    Obtaining dependency information for scikit-build-core[pyproject]>=0.5.1 from https://files.pythonhosted.org/packages/78/54/f56626c91bab3952f961495cfc60a8ff0fd4176bdbbcb646bed6a4da3bef/scikit_build_core-0.8.2-py3-none-any.whl.metadata
+    Using cached scikit_build_core-0.8.2-py3-none-any.whl.metadata (19 kB)
+  Collecting packaging>=20.9 (from scikit-build-core[pyproject]>=0.5.1)
+    Obtaining dependency information for packaging>=20.9 from https://files.pythonhosted.org/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl.metadata
+    Using cached packaging-24.0-py3-none-any.whl.metadata (3.2 kB)
+  Collecting pathspec>=0.10.1 (from scikit-build-core[pyproject]>=0.5.1)
+    Obtaining dependency information for pathspec>=0.10.1 from https://files.pythonhosted.org/packages/cc/20/ff623b09d963f88bfde16306a54e12ee5ea43e9b597108672ff3a408aad6/pathspec-0.12.1-py3-none-any.whl.metadata
+    Using cached pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+  Collecting pyproject-metadata>=0.5 (from scikit-build-core[pyproject]>=0.5.1)
+    Obtaining dependency information for pyproject-metadata>=0.5 from https://files.pythonhosted.org/packages/c4/cb/4678dfd70cd2f2d8969e571cdc1bb1e9293c698f8d1cf428fadcf48d6e9f/pyproject_metadata-0.7.1-py3-none-any.whl.metadata
+    Using cached pyproject_metadata-0.7.1-py3-none-any.whl.metadata (3.0 kB)
+  Using cached packaging-24.0-py3-none-any.whl (53 kB)
+  Using cached pathspec-0.12.1-py3-none-any.whl (31 kB)
+  Using cached pyproject_metadata-0.7.1-py3-none-any.whl (7.4 kB)
+  Using cached scikit_build_core-0.8.2-py3-none-any.whl (140 kB)
+  Installing collected packages: pathspec, packaging, scikit-build-core, pyproject-metadata
+  Successfully installed packaging-24.0 pathspec-0.12.1 pyproject-metadata-0.7.1 scikit-build-core-0.8.2
+
+  [notice] A new release of pip is available: 23.2.1 -> 24.0
+  [notice] To update, run: python.exe -m pip install --upgrade pip
+  Installing build dependencies ... done
+  Running command Getting requirements to build wheel
+  Getting requirements to build wheel ... done
+  Running command Preparing metadata (pyproject.toml)
+  *** scikit-build-core 0.8.2 using CMake 3.28.0 (metadata_wheel)
+  Preparing metadata (pyproject.toml) ... done
+Collecting typing-extensions>=4.5.0 (from llama-cpp-python)
+  Obtaining dependency information for typing-extensions>=4.5.0 from https://files.pythonhosted.org/packages/f9/de/dc04a3ea60b22624b51c703a84bbe0184abcd1d0b9bc8074b5d6b7ab90bb/typing_extensions-4.10.0-py3-none-any.whl.metadata
+  Downloading typing_extensions-4.10.0-py3-none-any.whl.metadata (3.0 kB)
+  Link requires a different Python (3.12.1 not in: '>=3.7,<3.11'): https://files.pythonhosted.org/packages/3a/be/650f9c091ef71cb01d735775d554e068752d3ff63d7943b26316dc401749/numpy-1.21.2.zip (from https://pypi.org/simple/numpy/) (requires-python:>=3.7,<3.11)
+  Link requires a different Python (3.12.1 not in: '>=3.7,<3.11'): https://files.pythonhosted.org/packages/5f/d6/ad58ded26556eaeaa8c971e08b6466f17c4ac4d786cd3d800e26ce59cc01/numpy-1.21.3.zip (from https://pypi.org/simple/numpy/) (requires-python:>=3.7,<3.11)
+  Link requires a different Python (3.12.1 not in: '>=3.7,<3.11'): https://files.pythonhosted.org/packages/fb/48/b0708ebd7718a8933f0d3937513ef8ef2f4f04529f1f66ca86d873043921/numpy-1.21.4.zip (from https://pypi.org/simple/numpy/) (requires-python:>=3.7,<3.11)
+  Link requires a different Python (3.12.1 not in: '>=3.7,<3.11'): https://files.pythonhosted.org/packages/c2/a8/a924a09492bdfee8c2ec3094d0a13f2799800b4fdc9c890738aeeb12c72e/numpy-1.21.5.zip (from https://pypi.org/simple/numpy/) (requires-python:>=3.7,<3.11)
+  Link requires a different Python (3.12.1 not in: '>=3.7,<3.11'): https://files.pythonhosted.org/packages/45/b7/de7b8e67f2232c26af57c205aaad29fe17754f793404f59c8a730c7a191a/numpy-1.21.6.zip (from https://pypi.org/simple/numpy/) (requires-python:>=3.7,<3.11)
+Collecting numpy>=1.20.0 (from llama-cpp-python)
+  Obtaining dependency information for numpy>=1.20.0 from https://files.pythonhosted.org/packages/16/2e/86f24451c2d530c88daf997cb8d6ac622c1d40d19f5a031ed68a4b73a374/numpy-1.26.4-cp312-cp312-win_amd64.whl.metadata
+  Downloading numpy-1.26.4-cp312-cp312-win_amd64.whl.metadata (61 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.0/61.0 kB ? eta 0:00:00
+Collecting diskcache>=5.6.1 (from llama-cpp-python)
+  Obtaining dependency information for diskcache>=5.6.1 from https://files.pythonhosted.org/packages/3f/27/4570e78fc0bf5ea0ca45eb1de3818a23787af9b390c0b0a0033a1b8236f9/diskcache-5.6.3-py3-none-any.whl.metadata
+  Downloading diskcache-5.6.3-py3-none-any.whl.metadata (20 kB)
+Collecting jinja2>=2.11.3 (from llama-cpp-python)
+  Obtaining dependency information for jinja2>=2.11.3 from https://files.pythonhosted.org/packages/30/6d/6de6be2d02603ab56e72997708809e8a5b0fbfee080735109b40a3564843/Jinja2-3.1.3-py3-none-any.whl.metadata
+  Downloading Jinja2-3.1.3-py3-none-any.whl.metadata (3.3 kB)
+Collecting MarkupSafe>=2.0 (from jinja2>=2.11.3->llama-cpp-python)
+  Obtaining dependency information for MarkupSafe>=2.0 from https://files.pythonhosted.org/packages/3f/14/c3554d512d5f9100a95e737502f4a2323a1959f6d0d01e0d0997b35f7b10/MarkupSafe-2.1.5-cp312-cp312-win_amd64.whl.metadata
+  Downloading MarkupSafe-2.1.5-cp312-cp312-win_amd64.whl.metadata (3.1 kB)
+Downloading diskcache-5.6.3-py3-none-any.whl (45 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.5/45.5 kB ? eta 0:00:00
+Downloading Jinja2-3.1.3-py3-none-any.whl (133 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.2/133.2 kB ? eta 0:00:00
+Downloading numpy-1.26.4-cp312-cp312-win_amd64.whl (15.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.5/15.5 MB 72.5 MB/s eta 0:00:00
+Downloading typing_extensions-4.10.0-py3-none-any.whl (33 kB)
+Downloading MarkupSafe-2.1.5-cp312-cp312-win_amd64.whl (17 kB)
+Building wheels for collected packages: llama-cpp-python
+  Running command Building wheel for llama-cpp-python (pyproject.toml)
+  *** scikit-build-core 0.8.2 using CMake 3.28.0 (wheel)
+  *** Configuring CMake...
+  2024-03-24 09:56:22,880 - scikit_build_core - WARNING - Can't find a Python library, got libdir=None, ldlibrary=None, multiarch=None, masd=None
+  CMake Warning:
+    Ignoring extra path from command line:
+
+     ""-DLLAMA_AVX2=OFF"
+
+
+  loading initial cache file C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\CMakeInit.txt
+  -- Building for: Visual Studio 17 2022
+  -- Selecting Windows SDK version 10.0.22621.0 to target Windows 10.0.22631.
+  -- The C compiler identification is MSVC 19.39.33523.0
+  -- The CXX compiler identification is MSVC 19.39.33523.0
+  -- Detecting C compiler ABI info
+  -- Detecting C compiler ABI info - done
+  -- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.39.33519/bin/Hostx64/x64/cl.exe - skipped
+  -- Detecting C compile features
+  -- Detecting C compile features - done
+  -- Detecting CXX compiler ABI info
+  -- Detecting CXX compiler ABI info - done
+  -- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.39.33519/bin/Hostx64/x64/cl.exe - skipped
+  -- Detecting CXX compile features
+  -- Detecting CXX compile features - done
+  -- Found Git: C:/tmp/G/Git/cmd/git.exe (found version "2.43.0.windows.1")
+  -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+  -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+  -- Looking for pthread_create in pthreads
+  -- Looking for pthread_create in pthreads - not found
+  -- Looking for pthread_create in pthread
+  -- Looking for pthread_create in pthread - not found
+  -- Found Threads: TRUE
+  -- Found CUDAToolkit: C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.4/include (found version "12.4.99")
+  -- cuBLAS found
+  -- The CUDA compiler identification is NVIDIA 12.4.99
+  -- Detecting CUDA compiler ABI info
+  -- Detecting CUDA compiler ABI info - done
+  -- Check for working CUDA compiler: C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.4/bin/nvcc.exe - skipped
+  -- Detecting CUDA compile features
+  -- Detecting CUDA compile features - done
+  -- Using CUDA architectures: 52;61;70
+  -- Warning: ccache not found - consider installing it for faster compilation or disable this warning with LLAMA_CCACHE=OFF
+  -- CMAKE_SYSTEM_PROCESSOR: AMD64
+  -- CMAKE_GENERATOR_PLATFORM: x64
+  -- x86 detected
+  -- Performing Test HAS_AVX_1
+  -- Performing Test HAS_AVX_1 - Success
+  -- Performing Test HAS_AVX2_1
+  -- Performing Test HAS_AVX2_1 - Success
+  -- Performing Test HAS_FMA_1
+  -- Performing Test HAS_FMA_1 - Success
+  -- Performing Test HAS_AVX512_1
+  -- Performing Test HAS_AVX512_1 - Failed
+  -- Performing Test HAS_AVX512_2
+  -- Performing Test HAS_AVX512_2 - Failed
+  CMake Warning (dev) at CMakeLists.txt:21 (install):
+    Target llama has PUBLIC_HEADER files but no PUBLIC_HEADER DESTINATION.
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+
+  CMake Warning (dev) at CMakeLists.txt:30 (install):
+    Target llama has PUBLIC_HEADER files but no PUBLIC_HEADER DESTINATION.
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+
+  -- Configuring done (15.6s)
+  -- Generating done (0.1s)
+  -- Build files have been written to: C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build
+  *** Building project with Visual Studio 17 2022...
+  Change Dir: 'C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build'
+
+  Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" ALL_BUILD.vcxproj /p:Configuration=Release /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+  MSBuild version 17.9.8+b34f75857 for .NET Framework
+  Build started 3/24/2024 9:56:38 AM.
+
+  Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" on node 1 (default targets).
+  Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (1) is building "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ZERO_CHECK.vcxproj" (2) on node 1 (default targets).
+  PrepareForBuild:
+    Creating directory "x64\Release\ZERO_CHECK\".
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ZERO_CHECK.vcxproj]
+    Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+    Creating directory "x64\Release\ZERO_CHECK\ZERO_CHECK.tlog\".
+  InitializeBuildStatus:
+    Creating "x64\Release\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+    Touching "x64\Release\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild".
+  CustomBuild:
+    1>Checking Build System
+  FinalizeBuildStatus:
+    Deleting file "x64\Release\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild".
+    Touching "x64\Release\ZERO_CHECK\ZERO_CHECK.tlog\ZERO_CHECK.lastbuildstate".
+  Done Building Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ZERO_CHECK.vcxproj" (default targets).
+  Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (1) is building "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\build_info.vcxproj" (3) on node 1 (default targets).
+  PrepareForBuild:
+    Creating directory "build_info.dir\Release\".
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\build_info.vcxproj]
+    Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+    Creating directory "build_info.dir\Release\build_info.tlog\".
+  InitializeBuildStatus:
+    Creating "build_info.dir\Release\build_info.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+    Touching "build_info.dir\Release\build_info.tlog\unsuccessfulbuild".
+  CustomBuild:
+    Generating build details from Git
+    -- Found Git: C:/tmp/G/Git/cmd/git.exe (found version "2.43.0.windows.1")
+    Building Custom Rule C:/Users/alex_/AppData/Local/Temp/pip-install-dbq7tmwm/llama-cpp-python_304daeb037114419aaf42078465bb0d8/vendor/llama.cpp/common/CMakeLists.txt
+  ClCompile:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\CL.exe /c /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include" /nologo /W1 /WX- /diagnostics:column /O2 /Ob2 /D _MBCS /D WIN32 /D _WINDOWS /D NDEBUG /D GGML_SCHED_MAX_COPIES=4 /D GGML_USE_CUBLAS /D GGML_CUDA_DMMV_X=32 /D GGML_CUDA_MMV_Y=1 /D K_QUANTS_PER_ITERATION=2 /D GGML_CUDA_PEER_MAX_BATCH_SIZE=128 /D _CRT_SECURE_NO_WARNINGS /D _XOPEN_SOURCE=600 /D "CMAKE_INTDIR=\"Release\"" /Gm- /EHsc /MD /GS /arch:AVX2 /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"build_info.dir\Release\\" /Fd"build_info.dir\Release\build_info.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\common\build-info.cpp"
+    build-info.cpp
+  Lib:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\Lib.exe /OUT:"build_info.dir\Release\build_info.lib" /NOLOGO /MACHINE:X64  /machine:x64 "build_info.dir\Release\build-info.obj"
+    build_info.vcxproj -> C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\build_info.dir\Release\build_info.lib
+  FinalizeBuildStatus:
+    Deleting file "build_info.dir\Release\build_info.tlog\unsuccessfulbuild".
+    Touching "build_info.dir\Release\build_info.tlog\build_info.lastbuildstate".
+  Done Building Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\build_info.vcxproj" (default targets).
+  Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (1) is building "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.vcxproj" (4) on node 1 (default targets).
+  PrepareForBuild:
+    Creating directory "ggml.dir\Release\".
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.vcxproj]
+    Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+    Creating directory "ggml.dir\Release\ggml.tlog\".
+  InitializeBuildStatus:
+    Creating "ggml.dir\Release\ggml.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+    Touching "ggml.dir\Release\ggml.tlog\unsuccessfulbuild".
+  CustomBuild:
+    Building Custom Rule C:/Users/alex_/AppData/Local/Temp/pip-install-dbq7tmwm/llama-cpp-python_304daeb037114419aaf42078465bb0d8/vendor/llama.cpp/CMakeLists.txt
+  AddCudaCompileDeps:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /D__CUDACC_VER_MAJOR__=12 /D__CUDACC_VER_MINOR__=4 /D_WINDOWS /DNDEBUG /DGGML_SCHED_MAX_COPIES=4 /DGGML_USE_CUBLAS /DGGML_CUDA_DMMV_X=32 /DGGML_CUDA_MMV_Y=1 /DK_QUANTS_PER_ITERATION=2 /DGGML_CUDA_PEER_MAX_BATCH_SIZE=128 /D_CRT_SECURE_NO_WARNINGS /D_XOPEN_SOURCE=600 /DCMAKE_INTDIR="Release" /D_MBCS /DWIN32 /D_WINDOWS /DNDEBUG /DGGML_SCHED_MAX_COPIES=4 /DGGML_USE_CUBLAS /DGGML_CUDA_DMMV_X=32 /DGGML_CUDA_MMV_Y=1 /DK_QUANTS_PER_ITERATION=2 /DGGML_CUDA_PEER_MAX_BATCH_SIZE=128 /D_CRT_SECURE_NO_WARNINGS /D_XOPEN_SOURCE=600 /DCMAKE_INTDIR="Release" /IC:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\. /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include" /I. /FIcuda_runtime.h /c C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\ggml-cuda.cu
+  Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.vcxproj" (4) is building "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.vcxproj" (4:2) on node 1 (CudaBuildCore target(s)).
+  CudaBuildCore:
+    Compiling CUDA source file ..\..\..\..\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\ggml-cuda.cu...
+    cmd.exe /C "C:\Users\alex_\AppData\Local\Temp\tmp826de10ae3dc4786bd5f7e540e91ddce.cmd"
+    "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64" -x cu   -I"C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\." -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include"     --keep-dir ggml\x64\Release -use_fast_math -maxrregcount=0   --machine 64 --compile -cudart static --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_70,code=[compute_70,sm_70] -Xcompiler="/EHsc -Ob2 /arch:AVX2"   -D_WINDOWS -DNDEBUG -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CUBLAS -DGGML_CUDA_DMMV_X=32 -DGGML_CUDA_MMV_Y=1 -DK_QUANTS_PER_ITERATION=2 -DGGML_CUDA_PEER_MAX_BATCH_SIZE=128 -D_CRT_SECURE_NO_WARNINGS -D_XOPEN_SOURCE=600 -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -DWIN32 -D_WINDOWS -DNDEBUG -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CUBLAS -DGGML_CUDA_DMMV_X=32 -DGGML_CUDA_MMV_Y=1 -DK_QUANTS_PER_ITERATION=2 -DGGML_CUDA_PEER_MAX_BATCH_SIZE=128 -D_CRT_SECURE_NO_WARNINGS -D_XOPEN_SOURCE=600 -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W1 /nologo /O2 /FS   /MD " -Xcompiler "/Fdggml.dir\Release\ggml.pdb" -o ggml.dir\Release\ggml-cuda.obj "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\ggml-cuda.cu"
+
+    (myenv) C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64" -x cu   -I"C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\." -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include"     --keep-dir ggml\x64\Release -use_fast_math -maxrregcount=0   --machine 64 --compile -cudart static --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_70,code=[compute_70,sm_70] -Xcompiler="/EHsc -Ob2 /arch:AVX2"   -D_WINDOWS -DNDEBUG -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CUBLAS -DGGML_CUDA_DMMV_X=32 -DGGML_CUDA_MMV_Y=1 -DK_QUANTS_PER_ITERATION=2 -DGGML_CUDA_PEER_MAX_BATCH_SIZE=128 -D_CRT_SECURE_NO_WARNINGS -D_XOPEN_SOURCE=600 -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -DWIN32 -D_WINDOWS -DNDEBUG -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CUBLAS -DGGML_CUDA_DMMV_X=32 -DGGML_CUDA_MMV_Y=1 -DK_QUANTS_PER_ITERATION=2 -DGGML_CUDA_PEER_MAX_BATCH_SIZE=128 -D_CRT_SECURE_NO_WARNINGS -D_XOPEN_SOURCE=600 -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W1 /nologo /O2 /FS   /MD " -Xcompiler "/Fdggml.dir\Release\ggml.pdb" -o ggml.dir\Release\ggml-cuda.obj "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\ggml-cuda.cu"
+    ggml-cuda.cu
+    tmpxft_0001385c_00000000-7_ggml-cuda.compute_70.cudafe1.cpp
+  C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\ggml-cuda.cu(10794): warning C4551: function call missing argument list [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.vcxproj]
+  Done Building Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.vcxproj" (CudaBuildCore target(s)).
+  ClCompile:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\CL.exe /c /I"C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\." /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include" /nologo /W1 /WX- /diagnostics:column /O2 /Ob2 /D _MBCS /D WIN32 /D _WINDOWS /D NDEBUG /D GGML_SCHED_MAX_COPIES=4 /D GGML_USE_CUBLAS /D GGML_CUDA_DMMV_X=32 /D GGML_CUDA_MMV_Y=1 /D K_QUANTS_PER_ITERATION=2 /D GGML_CUDA_PEER_MAX_BATCH_SIZE=128 /D _CRT_SECURE_NO_WARNINGS /D _XOPEN_SOURCE=600 /D "CMAKE_INTDIR=\"Release\"" /Gm- /MD /GS /arch:AVX2 /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"ggml.dir\Release\\" /Fd"ggml.dir\Release\ggml.pdb" /external:W0 /Gd /TC /errorReport:queue  /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.4/include" "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\ggml.c" "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\ggml-alloc.c" "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\ggml-backend.c" "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\ggml-quants.c"
+    ggml.c
+    ggml-alloc.c
+    ggml-backend.c
+    ggml-quants.c
+    Generating Code...
+  Lib:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\Lib.exe /OUT:"ggml.dir\Release\ggml.lib" /NOLOGO /MACHINE:X64  /machine:x64 "ggml.dir\Release\ggml-cuda.obj"
+    ggml.dir\Release\ggml.obj
+    "ggml.dir\Release\ggml-alloc.obj"
+    "ggml.dir\Release\ggml-backend.obj"
+    "ggml.dir\Release\ggml-quants.obj"
+    ggml.vcxproj -> C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml.lib
+  FinalizeBuildStatus:
+    Deleting file "ggml.dir\Release\ggml.tlog\unsuccessfulbuild".
+    Touching "ggml.dir\Release\ggml.tlog\ggml.lastbuildstate".
+  Done Building Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.vcxproj" (default targets).
+  Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (1) is building "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.vcxproj" (5) on node 1 (default targets).
+  Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.vcxproj" (5) is building "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\llama.vcxproj" (6) on node 1 (default targets).
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\llama.vcxproj]
+    Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+    Creating directory "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\bin\Release\".
+    Creating directory "llama.dir\Release\llama.tlog\".
+  InitializeBuildStatus:
+    Creating "llama.dir\Release\llama.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+    Touching "llama.dir\Release\llama.tlog\unsuccessfulbuild".
+  CustomBuild:
+    Building Custom Rule C:/Users/alex_/AppData/Local/Temp/pip-install-dbq7tmwm/llama-cpp-python_304daeb037114419aaf42078465bb0d8/vendor/llama.cpp/CMakeLists.txt
+  ClCompile:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\CL.exe /c /I"C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\." /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include" /nologo /W1 /WX- /diagnostics:column /O2 /Ob2 /D _WINDLL /D _MBCS /D WIN32 /D _WINDOWS /D NDEBUG /D LLAMA_SHARED /D LLAMA_BUILD /D GGML_SCHED_MAX_COPIES=4 /D GGML_USE_CUBLAS /D GGML_CUDA_DMMV_X=32 /D GGML_CUDA_MMV_Y=1 /D K_QUANTS_PER_ITERATION=2 /D GGML_CUDA_PEER_MAX_BATCH_SIZE=128 /D _CRT_SECURE_NO_WARNINGS /D _XOPEN_SOURCE=600 /D "CMAKE_INTDIR=\"Release\"" /D llama_EXPORTS /Gm- /EHsc /MD /GS /arch:AVX2 /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"llama.dir\Release\\" /Fd"llama.dir\Release\vc143.pdb" /external:W0 /Gd /TP /errorReport:queue  /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.4/include" "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\llama.cpp" "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\unicode.cpp"
+    llama.cpp
+  C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\llama.cpp(3844,69): warning C4566: character represented by universal-character-name '\u010A' cannot be represented in the current code page (1252) [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\llama.vcxproj]
+    unicode.cpp
+    Generating Code...
+  MakeDirsForLink:
+    Creating directory "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\Release\".
+  PreLinkEvent:
+    Auto build dll exports
+    setlocal
+    cd C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp
+    if %errorlevel% neq 0 goto :cmEnd
+    C:
+    if %errorlevel% neq 0 goto :cmEnd
+    "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E __create_def C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/llama.dir/Release/exports.def C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/llama.dir/Release//objects.txt
+    if %errorlevel% neq 0 goto :cmEnd
+    :cmEnd
+    endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+    :cmErrorLevel
+    exit /b %1
+    :cmDone
+    if %errorlevel% neq 0 goto :VCEnd
+    :VCEnd
+  Link:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\bin\Release\llama.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.4/lib/x64" /LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.4/lib/x64/Release" /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64" "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cudart.lib" "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cublas.lib" "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cublasLt.lib" "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cuda.lib" cudadevrt.lib cudart_static.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /DEF:"C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/llama.dir/Release/exports.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/bin/Release/llama.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/Release/llama.lib" /MACHINE:X64  /machine:x64 /DLL llama.dir\Release\llama.obj
+    llama.dir\Release\unicode.obj
+    C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml.obj
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-alloc.obj"
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-backend.obj"
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-quants.obj"
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-cuda.obj"
+       Creating library C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/Release/llama.lib and object C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/Release/llama.exp
+    llama.vcxproj -> C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\bin\Release\llama.dll
+  FinalizeBuildStatus:
+    Deleting file "llama.dir\Release\llama.tlog\unsuccessfulbuild".
+    Touching "llama.dir\Release\llama.tlog\llama.lastbuildstate".
+  Done Building Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\llama.vcxproj" (default targets).
+  PrepareForBuild:
+    Creating directory "llava.dir\Release\".
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.vcxproj]
+    Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+    Creating directory "llava.dir\Release\llava.tlog\".
+  InitializeBuildStatus:
+    Creating "llava.dir\Release\llava.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+    Touching "llava.dir\Release\llava.tlog\unsuccessfulbuild".
+  CustomBuild:
+    Building Custom Rule C:/Users/alex_/AppData/Local/Temp/pip-install-dbq7tmwm/llama-cpp-python_304daeb037114419aaf42078465bb0d8/vendor/llama.cpp/examples/llava/CMakeLists.txt
+  ClCompile:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\CL.exe /c /I"C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\." /I"C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\..\.." /I"C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\..\..\common" /I"C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\." /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include" /nologo /W1 /WX- /diagnostics:column /O2 /Ob2 /D _MBCS /D WIN32 /D _WINDOWS /D NDEBUG /D LLAMA_SHARED /D LLAMA_BUILD /D GGML_USE_CUBLAS /D "CMAKE_INTDIR=\"Release\"" /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"llava.dir\Release\\" /Fd"llava.dir\Release\llava.pdb" /external:W0 /Gd /TP /errorReport:queue  /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.4/include" "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\llava.cpp" "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\clip.cpp"
+    llava.cpp
+    clip.cpp
+  C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\clip.cpp(835,9): warning C4297: 'clip_model_load': function assumed not to throw an exception but does [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.vcxproj]
+    C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\clip.cpp(835,9):
+    __declspec(nothrow), throw(), noexcept(true), or noexcept was specified on the function
+
+  C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\clip.cpp(1183,13): warning C4297: 'clip_model_load': function assumed not to throw an exception but does [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.vcxproj]
+    C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\clip.cpp(1183,13):
+    __declspec(nothrow), throw(), noexcept(true), or noexcept was specified on the function
+
+  C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\clip.cpp(1975,5): warning C4297: 'clip_n_mmproj_embd': function assumed not to throw an exception but does [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.vcxproj]
+    C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\clip.cpp(1975,5):
+    __declspec(nothrow), throw(), noexcept(true), or noexcept was specified on the function
+
+    Generating Code...
+  Lib:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\Lib.exe /OUT:"llava.dir\Release\llava.lib" /NOLOGO /MACHINE:X64  /machine:x64 llava.dir\Release\llava.obj
+    llava.dir\Release\clip.obj
+    llava.vcxproj -> C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.dir\Release\llava.lib
+  FinalizeBuildStatus:
+    Deleting file "llava.dir\Release\llava.tlog\unsuccessfulbuild".
+    Touching "llava.dir\Release\llava.tlog\llava.lastbuildstate".
+  Done Building Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.vcxproj" (default targets).
+  Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (1) is building "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\common.vcxproj" (7) on node 1 (default targets).
+  PrepareForBuild:
+    Creating directory "common.dir\Release\".
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\common.vcxproj]
+    Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+    Creating directory "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\Release\".
+    Creating directory "common.dir\Release\common.tlog\".
+  InitializeBuildStatus:
+    Creating "common.dir\Release\common.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+    Touching "common.dir\Release\common.tlog\unsuccessfulbuild".
+  CustomBuild:
+    Building Custom Rule C:/Users/alex_/AppData/Local/Temp/pip-install-dbq7tmwm/llama-cpp-python_304daeb037114419aaf42078465bb0d8/vendor/llama.cpp/common/CMakeLists.txt
+  ClCompile:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\CL.exe /c /I"C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\common\." /I"C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\." /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include" /nologo /W1 /WX- /diagnostics:column /O2 /Ob2 /D _MBCS /D WIN32 /D _WINDOWS /D NDEBUG /D GGML_SCHED_MAX_COPIES=4 /D GGML_USE_CUBLAS /D GGML_CUDA_DMMV_X=32 /D GGML_CUDA_MMV_Y=1 /D K_QUANTS_PER_ITERATION=2 /D GGML_CUDA_PEER_MAX_BATCH_SIZE=128 /D _CRT_SECURE_NO_WARNINGS /D _XOPEN_SOURCE=600 /D "CMAKE_INTDIR=\"Release\"" /Gm- /EHsc /MD /GS /arch:AVX2 /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"common.dir\Release\\" /Fd"C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\Release\common.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\common\common.cpp" "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\common\sampling.cpp" "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\common\console.cpp" "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\common\grammar-parser.cpp" "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\common\train.cpp"
+    common.cpp
+    sampling.cpp
+    console.cpp
+    grammar-parser.cpp
+    train.cpp
+    Generating Code...
+  Lib:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\Lib.exe /OUT:"C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\Release\common.lib" /NOLOGO /MACHINE:X64  /machine:x64 common.dir\Release\common.obj
+    common.dir\Release\sampling.obj
+    common.dir\Release\console.obj
+    "common.dir\Release\grammar-parser.obj"
+    common.dir\Release\train.obj
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\build_info.dir\Release\build-info.obj"
+    common.vcxproj -> C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\Release\common.lib
+  FinalizeBuildStatus:
+    Deleting file "common.dir\Release\common.tlog\unsuccessfulbuild".
+    Touching "common.dir\Release\common.tlog\common.lastbuildstate".
+  Done Building Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\common.vcxproj" (default targets).
+  Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (1) is building "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml_shared.vcxproj" (8) on node 1 (default targets).
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml_shared.vcxproj]
+    Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+    Creating directory "ggml_shared.dir\Release\ggml_shared.tlog\".
+  InitializeBuildStatus:
+    Creating "ggml_shared.dir\Release\ggml_shared.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+    Touching "ggml_shared.dir\Release\ggml_shared.tlog\unsuccessfulbuild".
+  CustomBuild:
+    Building Custom Rule C:/Users/alex_/AppData/Local/Temp/pip-install-dbq7tmwm/llama-cpp-python_304daeb037114419aaf42078465bb0d8/vendor/llama.cpp/CMakeLists.txt
+  PreLinkEvent:
+    Auto build dll exports
+    setlocal
+    cd C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp
+    if %errorlevel% neq 0 goto :cmEnd
+    C:
+    if %errorlevel% neq 0 goto :cmEnd
+    "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E __create_def C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/ggml_shared.dir/Release/exports.def C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/ggml_shared.dir/Release//objects.txt
+    if %errorlevel% neq 0 goto :cmEnd
+    :cmEnd
+    endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+    :cmErrorLevel
+    exit /b %1
+    :cmDone
+    if %errorlevel% neq 0 goto :VCEnd
+    :VCEnd
+  Link:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\bin\Release\ggml_shared.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64" "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cudart.lib" "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cublas.lib" "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cublasLt.lib" "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cuda.lib" cudadevrt.lib cudart_static.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /DEF:"C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/ggml_shared.dir/Release/exports.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/bin/Release/ggml_shared.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/Release/ggml_shared.lib" /MACHINE:X64  /machine:x64 /DLL C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml.obj
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-alloc.obj"
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-backend.obj"
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-quants.obj"
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-cuda.obj"
+       Creating library C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/Release/ggml_shared.lib and object C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/Release/ggml_shared.exp
+    ggml_shared.vcxproj -> C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\bin\Release\ggml_shared.dll
+  FinalizeBuildStatus:
+    Deleting file "ggml_shared.dir\Release\ggml_shared.tlog\unsuccessfulbuild".
+    Touching "ggml_shared.dir\Release\ggml_shared.tlog\ggml_shared.lastbuildstate".
+  Done Building Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml_shared.vcxproj" (default targets).
+  Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (1) is building "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml_static.vcxproj" (9) on node 1 (default targets).
+  PrepareForBuild:
+    Creating directory "ggml_static.dir\Release\".
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml_static.vcxproj]
+    Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+    Creating directory "ggml_static.dir\Release\ggml_static.tlog\".
+  InitializeBuildStatus:
+    Creating "ggml_static.dir\Release\ggml_static.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+    Touching "ggml_static.dir\Release\ggml_static.tlog\unsuccessfulbuild".
+  CustomBuild:
+    Building Custom Rule C:/Users/alex_/AppData/Local/Temp/pip-install-dbq7tmwm/llama-cpp-python_304daeb037114419aaf42078465bb0d8/vendor/llama.cpp/CMakeLists.txt
+  Lib:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\Lib.exe /OUT:"C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\Release\ggml_static.lib" /NOLOGO /MACHINE:X64  /machine:x64 C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml.obj
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-alloc.obj"
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-backend.obj"
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-quants.obj"
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-cuda.obj"
+    ggml_static.vcxproj -> C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\Release\ggml_static.lib
+  FinalizeBuildStatus:
+    Deleting file "ggml_static.dir\Release\ggml_static.tlog\unsuccessfulbuild".
+    Touching "ggml_static.dir\Release\ggml_static.tlog\ggml_static.lastbuildstate".
+  Done Building Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml_static.vcxproj" (default targets).
+  Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (1) is building "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava-cli.vcxproj" (10) on node 1 (default targets).
+  PrepareForBuild:
+    Creating directory "llava-cli.dir\Release\".
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava-cli.vcxproj]
+    Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+    Creating directory "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\Release\".
+    Creating directory "llava-cli.dir\Release\llava-cli.tlog\".
+  InitializeBuildStatus:
+    Creating "llava-cli.dir\Release\llava-cli.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+    Touching "llava-cli.dir\Release\llava-cli.tlog\unsuccessfulbuild".
+  CustomBuild:
+    Building Custom Rule C:/Users/alex_/AppData/Local/Temp/pip-install-dbq7tmwm/llama-cpp-python_304daeb037114419aaf42078465bb0d8/vendor/llama.cpp/examples/llava/CMakeLists.txt
+  ClCompile:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\CL.exe /c /I"C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\common\." /I"C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\." /I"C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\." /I"C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\..\.." /I"C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\..\..\common" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include" /nologo /W1 /WX- /diagnostics:column /O2 /Ob2 /D _MBCS /D WIN32 /D _WINDOWS /D NDEBUG /D GGML_USE_CUBLAS /D "CMAKE_INTDIR=\"Release\"" /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"llava-cli.dir\Release\\" /Fd"llava-cli.dir\Release\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\llava-cli.cpp"
+    llava-cli.cpp
+  Link:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\Release\llava-cli.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64" ..\..\common\Release\common.lib ..\..\Release\llama.lib "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cudart.lib" "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cublas.lib" "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cublasLt.lib" "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cuda.lib" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/examples/llava/Release/llava-cli.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/examples/llava/Release/llava-cli.lib" /MACHINE:X64  /machine:x64 "llava-cli.dir\Release\llava-cli.obj"
+    C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.dir\Release\llava.obj
+    C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.dir\Release\clip.obj
+       Creating library C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/examples/llava/Release/llava-cli.lib and object C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/examples/llava/Release/llava-cli.exp
+    llava-cli.vcxproj -> C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\Release\llava-cli.exe
+  FinalizeBuildStatus:
+    Deleting file "llava-cli.dir\Release\llava-cli.tlog\unsuccessfulbuild".
+    Touching "llava-cli.dir\Release\llava-cli.tlog\llava-cli.lastbuildstate".
+  Done Building Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava-cli.vcxproj" (default targets).
+  Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (1) is building "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava_shared.vcxproj" (11) on node 1 (default targets).
+  PrepareForBuild:
+    Creating directory "llava_shared.dir\Release\".
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava_shared.vcxproj]
+    Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+    Creating directory "llava_shared.dir\Release\llava_shared.tlog\".
+  InitializeBuildStatus:
+    Creating "llava_shared.dir\Release\llava_shared.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+    Touching "llava_shared.dir\Release\llava_shared.tlog\unsuccessfulbuild".
+  CustomBuild:
+    Building Custom Rule C:/Users/alex_/AppData/Local/Temp/pip-install-dbq7tmwm/llama-cpp-python_304daeb037114419aaf42078465bb0d8/vendor/llama.cpp/examples/llava/CMakeLists.txt
+  Link:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\Release\llava.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64" ..\..\Release\llama.lib "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cudart.lib" "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cublas.lib" "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cublasLt.lib" "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64\cuda.lib" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/examples/llava/Release/llava.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/examples/llava/Release/llava.lib" /MACHINE:X64  /machine:x64 /DLL C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.dir\Release\llava.obj
+    C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.dir\Release\clip.obj
+    C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml.obj
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-alloc.obj"
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-backend.obj"
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-quants.obj"
+    "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.dir\Release\ggml-cuda.obj"
+       Creating library C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/examples/llava/Release/llava.lib and object C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/build/vendor/llama.cpp/examples/llava/Release/llava.exp
+    llava_shared.vcxproj -> C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\Release\llava.dll
+  FinalizeBuildStatus:
+    Deleting file "llava_shared.dir\Release\llava_shared.tlog\unsuccessfulbuild".
+    Touching "llava_shared.dir\Release\llava_shared.tlog\llava_shared.lastbuildstate".
+  Done Building Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava_shared.vcxproj" (default targets).
+  Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (1) is building "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava_static.vcxproj" (12) on node 1 (default targets).
+  PrepareForBuild:
+    Creating directory "llava_static.dir\Release\".
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava_static.vcxproj]
+    Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+    Creating directory "llava_static.dir\Release\llava_static.tlog\".
+  InitializeBuildStatus:
+    Creating "llava_static.dir\Release\llava_static.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+    Touching "llava_static.dir\Release\llava_static.tlog\unsuccessfulbuild".
+  CustomBuild:
+    Building Custom Rule C:/Users/alex_/AppData/Local/Temp/pip-install-dbq7tmwm/llama-cpp-python_304daeb037114419aaf42078465bb0d8/vendor/llama.cpp/examples/llava/CMakeLists.txt
+  Lib:
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\Lib.exe /OUT:"C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\Release\llava_static.lib" /NOLOGO /MACHINE:X64  /machine:x64 C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.dir\Release\llava.obj
+    C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.dir\Release\clip.obj
+    llava_static.vcxproj -> C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\Release\llava_static.lib
+  FinalizeBuildStatus:
+    Deleting file "llava_static.dir\Release\llava_static.tlog\unsuccessfulbuild".
+    Touching "llava_static.dir\Release\llava_static.tlog\llava_static.lastbuildstate".
+  Done Building Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava_static.vcxproj" (default targets).
+  PrepareForBuild:
+    Creating directory "x64\Release\ALL_BUILD\".
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj]
+    Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+    Creating directory "x64\Release\ALL_BUILD\ALL_BUILD.tlog\".
+  InitializeBuildStatus:
+    Creating "x64\Release\ALL_BUILD\ALL_BUILD.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+    Touching "x64\Release\ALL_BUILD\ALL_BUILD.tlog\unsuccessfulbuild".
+  CustomBuild:
+    Building Custom Rule C:/Users/alex_/AppData/Local/Temp/pip-install-dbq7tmwm/llama-cpp-python_304daeb037114419aaf42078465bb0d8/CMakeLists.txt
+  FinalizeBuildStatus:
+    Deleting file "x64\Release\ALL_BUILD\ALL_BUILD.tlog\unsuccessfulbuild".
+    Touching "x64\Release\ALL_BUILD\ALL_BUILD.tlog\ALL_BUILD.lastbuildstate".
+  Done Building Project "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default targets).
+
+  Build succeeded.
+
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default target) (1) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ZERO_CHECK.vcxproj" (default target) (2) ->
+  (PrepareForBuild target) ->
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ZERO_CHECK.vcxproj]
+
+
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default target) (1) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\build_info.vcxproj" (default target) (3) ->
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\build_info.vcxproj]
+
+
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default target) (1) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.vcxproj" (default target) (4) ->
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.vcxproj]
+
+
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default target) (1) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.vcxproj" (default target) (4) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.vcxproj" (CudaBuildCore target) (4:2) ->
+  (CudaBuildCore target) ->
+    C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\ggml-cuda.cu(10794): warning C4551: function call missing argument list [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml.vcxproj]
+
+
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default target) (1) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.vcxproj" (default target) (5) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\llama.vcxproj" (default target) (6) ->
+  (PrepareForBuild target) ->
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\llama.vcxproj]
+
+
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default target) (1) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.vcxproj" (default target) (5) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\llama.vcxproj" (default target) (6) ->
+  (ClCompile target) ->
+    C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\llama.cpp(3844,69): warning C4566: character represented by universal-character-name '\u010A' cannot be represented in the current code page (1252) [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\llama.vcxproj]
+
+
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default target) (1) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.vcxproj" (default target) (5) ->
+  (PrepareForBuild target) ->
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.vcxproj]
+
+
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default target) (1) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.vcxproj" (default target) (5) ->
+  (ClCompile target) ->
+    C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\clip.cpp(835,9): warning C4297: 'clip_model_load': function assumed not to throw an exception but does [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.vcxproj]
+    C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\clip.cpp(1183,13): warning C4297: 'clip_model_load': function assumed not to throw an exception but does [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.vcxproj]
+    C:\Users\alex_\AppData\Local\Temp\pip-install-dbq7tmwm\llama-cpp-python_304daeb037114419aaf42078465bb0d8\vendor\llama.cpp\examples\llava\clip.cpp(1975,5): warning C4297: 'clip_n_mmproj_embd': function assumed not to throw an exception but does [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava.vcxproj]
+
+
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default target) (1) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\common.vcxproj" (default target) (7) ->
+  (PrepareForBuild target) ->
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\common\common.vcxproj]
+
+
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default target) (1) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml_shared.vcxproj" (default target) (8) ->
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml_shared.vcxproj]
+
+
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default target) (1) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml_static.vcxproj" (default target) (9) ->
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\ggml_static.vcxproj]
+
+
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default target) (1) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava-cli.vcxproj" (default target) (10) ->
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava-cli.vcxproj]
+
+
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default target) (1) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava_shared.vcxproj" (default target) (11) ->
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava_shared.vcxproj]
+
+
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default target) (1) ->
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava_static.vcxproj" (default target) (12) ->
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\vendor\llama.cpp\examples\llava\llava_static.vcxproj]
+
+
+  "C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj" (default target) (1) ->
+    C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(541,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\build\ALL_BUILD.vcxproj]
+
+      17 Warning(s)
+      0 Error(s)
+
+  Time Elapsed 00:01:53.50
+
+  *** Installing project into wheel...
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/lib/ggml_shared.lib
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/bin/ggml_shared.dll
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/lib/cmake/Llama/LlamaConfig.cmake
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/lib/cmake/Llama/LlamaConfigVersion.cmake
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/include/ggml.h
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/include/ggml-alloc.h
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/include/ggml-backend.h
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/include/ggml-cuda.h
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/lib/llama.lib
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/bin/llama.dll
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/include/llama.h
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/bin/convert.py
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/bin/convert-lora-to-ggml.py
+  -- Installing: C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/wheel/platlib/llama_cpp/llama.lib
+  -- Installing: C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/wheel/platlib/llama_cpp/llama.dll
+  -- Installing: C:/Users/alex_/AppData/Local/Temp/pip-install-dbq7tmwm/llama-cpp-python_304daeb037114419aaf42078465bb0d8/llama_cpp/llama.lib
+  -- Installing: C:/Users/alex_/AppData/Local/Temp/pip-install-dbq7tmwm/llama-cpp-python_304daeb037114419aaf42078465bb0d8/llama_cpp/llama.dll
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/lib/llava.lib
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/bin/llava.dll
+  -- Installing: C:\Users\alex_\AppData\Local\Temp\tmps353d_a6\wheel\platlib/bin/llava-cli.exe
+  -- Installing: C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/wheel/platlib/llama_cpp/llava.lib
+  -- Installing: C:/Users/alex_/AppData/Local/Temp/tmps353d_a6/wheel/platlib/llama_cpp/llava.dll
+  -- Installing: C:/Users/alex_/AppData/Local/Temp/pip-install-dbq7tmwm/llama-cpp-python_304daeb037114419aaf42078465bb0d8/llama_cpp/llava.lib
+  -- Installing: C:/Users/alex_/AppData/Local/Temp/pip-install-dbq7tmwm/llama-cpp-python_304daeb037114419aaf42078465bb0d8/llama_cpp/llava.dll
+  *** Making wheel...
+  *** Created llama_cpp_python-0.2.57-cp312-cp312-win_amd64.whl...
+  Building wheel for llama-cpp-python (pyproject.toml) ... done
+  Created wheel for llama-cpp-python: filename=llama_cpp_python-0.2.57-cp312-cp312-win_amd64.whl size=26521809 sha256=033c2e6b0406319e3d49bc8379c1822fcee0cda8b0757607284e8251092d2d3f
+  Stored in directory: C:\Users\alex_\AppData\Local\Temp\pip-ephem-wheel-cache-g1oew51z\wheels\7c\c3\34\441245e0260ec4a78c3b43fec3fe682bc2c09c2a4ae7d3cafc
+Successfully built llama-cpp-python
+Installing collected packages: typing-extensions, numpy, MarkupSafe, diskcache, jinja2, llama-cpp-python
+Successfully installed MarkupSafe-2.1.5 diskcache-5.6.3 jinja2-3.1.3 llama-cpp-python-0.2.57 numpy-1.26.4 typing-extensions-4.10.0

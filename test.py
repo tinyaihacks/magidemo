@@ -23,7 +23,7 @@ model_path = join('models', 'milkowski', 'Magicoder-S-DS-6.7B-GGUF', 'magicoder-
 ## Instantiate model from downloaded file
 llm = Llama(
     model_path=model_path,
-    n_gpu_layers=32, n_threads=32, n_ctx=3584, n_batch=521, use_cuda=True
+    n_gpu_layers=32, n_threads=24, n_ctx=3584, n_batch=521, mlock=True, use_cuda=True
 )
 
 ## Generation kwargs
